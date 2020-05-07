@@ -148,7 +148,7 @@ if __name__ == "__main__":
 
     if latest_published_time:
         news_feed = get_news_feed_from_url(rss_url)
-        latest_feed, latest_time_recorded = get_latest_feed(news_feed, int(latest_published_time))
+        latest_feed, latest_time_recorded = get_latest_feed(news_feed, latest_published_time)
         json_formatted_feed = get_formatted_json_feeds(latest_feed)
         create_new_json_feed_file(json_output_file.format(int(latest_published_time)), json_formatted_feed)
         update_last_time_file(last_time_file, latest_time_recorded)
